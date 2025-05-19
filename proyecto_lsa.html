@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor de Lengua de Señas Argentina (LSA)</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/lgo/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="stilo.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="assets/lgo/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                Traductor LSA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Características</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#demo">Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tech">Tecnología</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Equipo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 data-aos="fade-up">Traductor LSA</h1>
+            <p class="lead" data-aos="fade-up" data-aos-delay="200">
+                Aplicación móvil para traducir texto y voz al Lenguaje de Señas Argentino
+            </p>
+            <p class="text-white-50" data-aos="fade-up" data-aos-delay="300">
+                Nuestro objetivo es acortar la brecha del idioma y la comunicación, facilitar la comunicación con personas sordo-mudas y hipoacúsicas.
+                Lograr llevar esta app a el ambito escolar, laboral y social, para evitar la discriminación y la exclusión.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Características Principales</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="card-body">
+                            <h3><i class="fas fa-microphone"></i> Reconocimiento de Voz</h3>
+                            <p>Utilizamos un modelo de IA de google para transformar la voz a texto en tiempo real.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="card-body">
+                            <h3><i class="fas fa-sign-language"></i> Animaciones 3D</h3>
+                            <p>Usamos un modelo 3D para mostrar las señas del Lenguaje de Señas Argentino (LSA).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="card-body">
+                            <h3><i class="fas fa-mobile-alt"></i> Entorno de desarrollo</h3>
+                            <p>○ Desarrollamos la app en Flutter.<br>○ Unity para mostrar el modelo 3D. <br>○ blender para crear las animaciones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Demo de la Aplicación</h2>
+            <!-- Fila para el modelo 3D centrado -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 text-center">
+                    <h4>Visualización del Modelo 3D</h4>
+                    <div id="demoAnimation" style="width: 300px; height: 300px; margin: 0 auto; background-color: #f0f0f0; border: 1px solid #ccc; margin-bottom: 20px; text-align: center;">
+                        <div id="modelContainer" style="width: 100%; height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fila para el área de entrada de texto -->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="demo-input text-center">
+                        <h4>Ingresa texto o habla:</h4>
+                        <div class="input-group" style="max-width: 500px; margin: 0 auto;">
+                            <input type="text" id="demoInput" class="form-control" placeholder="Escribe algo...">
+                            <div class="input-group-append">
+                                <button id="startRecognition" class="btn btn-primary">
+                                    <i class="fas fa-microphone"></i> 
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <p class="text-muted">Presiona el botón y habla o escribe y presiona Enter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Tecnologías Utilizadas</h2>
+            <div class="row g-4">
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tech-item">
+                        <h3>Blender</h3>
+                        <p>Creación del modelo 3D y las animaciones.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tech-item">
+                        <h3>Flutter</h3>
+                        <p>Entorno donde llevamos a cabo el desarrollo de la app.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tech-item">
+                        <h3>Unity</h3>
+                        <p>Entorno donde mostramos el modelo 3D y cargamos las animaciones en la app.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="tech-item">
+                        <h3>Speech to Text</h3>
+                        <p>Modelo de IA de google que usamos para transformar la voz a texto en tiempo real.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Nuestro Equipo</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-member">
+                        <img src="https://via.placeholder.com/200" alt="Renzo Meire" class="rounded-circle">
+                        <h3>Renzo Meire</h3>
+                        <p>Desarrollador</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-member">
+                        <img src="https://via.placeholder.com/200" alt="Agustina Gullo" class="rounded-circle">
+                        <h3>Agustina Gullo</h3>
+                        <p>Traductora</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-member">
+                        <img src="https://via.placeholder.com/200" alt="Milagros Cabanillas" class="rounded-circle">
+                        <h3>Milagros Cabanillas</h3>
+                        <p>Coordinadora del Proyecto</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <div id="scrollBtn" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://kit.fontawesome.com/your-code.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Variables globales para Three.js
+        let scene, camera, renderer, controls, clock;
+        let model, mixer, gltfAnimations = [], currentAnimation, isAnimating = false;
+
+        // Inicializar Three.js
+        function init3D() {
+            const container = document.getElementById('demoAnimation');
+            if (!container) {
+                console.error("FATAL ERROR: Contenedor 'demoAnimation' no encontrado en el DOM.");
+                return;
+            }
+            container.innerHTML = '';
+
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xf0f0f0);
+            
+            // Se eliminó el AxesHelper para quitar las líneas de los ejes
+            
+            const size = 300; // Tamaño fijo para mantener el cuadrado
+
+            camera = new THREE.PerspectiveCamera(70, 1, 0.1, 5000); // Aspect ratio 1:1
+            camera.position.set(0, 1.5, 12); // Acercar cámara en Z a 12. FOV 70.
+            camera.lookAt(0, 0, 0);    
+
+            renderer = new THREE.WebGLRenderer({ 
+                antialias: true, 
+                alpha: true,
+                preserveDrawingBuffer: true 
+            });
+            
+            container.style.position = 'relative';
+            container.style.width = size + 'px';
+            container.style.height = size + 'px';
+            container.style.overflow = 'hidden';
+            container.style.margin = '10px auto';
+            container.style.backgroundColor = '#f0f0f0';
+            
+            renderer.setSize(size, size);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.shadowMap.enabled = true; 
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            
+            // >>> CRÍTICO: Añadir el canvas del renderer al contenedor del DOM <<<
+            container.appendChild(renderer.domElement);
+            // >>> FIN CRÍTICO <<<
+
+            console.log('Renderer configurado y canvas añadido. Dimensiones del canvas:', size, 'x', size);
+            
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+            scene.add(ambientLight);
+            
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5); 
+            directionalLight.position.set(5, 5, 5);
+            directionalLight.castShadow = true;
+            scene.add(directionalLight);
+            
+            controls = new THREE.OrbitControls(camera, renderer.domElement); 
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+
+            clock = new THREE.Clock();
+            
+            load3DModel(); 
+            
+            window.addEventListener('resize', onWindowResize);
+            onWindowResize();
+            
+            animate();
+        }
+
+        // Cargar el modelo GLB con animación
+        function load3DModel() {
+            const loader = new THREE.GLTFLoader();
+            
+            console.log('Cargando modelo GLB...');
+            
+            loader.load(
+                'assets/models/saludo.glb',
+                function (gltf) {
+                    console.log('Modelo GLB cargado:', gltf);
+                    
+                    if (!gltf.scene) {
+                        console.error('Error: El archivo GLB no contiene una escena');
+                        return;
+                    }
+                    model = gltf.scene; 
+                    
+                    const scale = 0.1;
+                    model.scale.set(scale, scale, scale);
+                    model.position.set(0, -1, 0); // Revertir Y a la posición original
+                    
+                    scene.add(model);
+                    
+                    gltfAnimations = gltf.animations; 
+                    if (gltfAnimations && gltfAnimations.length > 0) {
+                        console.log('Animaciones encontradas:', gltfAnimations.length);
+                        mixer = new THREE.AnimationMixer(model);
+                        console.log('Mixer de animación configurado.');
+                    } else {
+                        console.warn('No se encontraron animaciones en el modelo');
+                    }
+                    
+                    // --- INICIO BLOQUE DE CÁMARA DINÁMICA (DEBE ESTAR COMENTADO PARA DEPURAR EJES) ---
+                    /*
+                    const box = new THREE.Box3().setFromObject(model);
+                    const center = box.getCenter(new THREE.Vector3());
+                    const size = box.getSize(new THREE.Vector3());
+                    const maxDim = Math.max(size.x, size.y, size.z);
+                    
+                    console.log('Tamaño del modelo (x,y,z):', size.x, size.y, size.z);
+                    console.log('Centro del modelo (x,y,z):', center.x, center.y, center.z);
+                    
+                    const fov = camera.fov * (Math.PI / 180);
+                    let cameraZ = Math.abs(maxDim / Math.sin(fov / 2)) * 1.2;
+                    cameraZ = Math.max(cameraZ, maxDim * 2);
+                    // Esto estaba SOBREESCRIBIENDO la cámara de init3D:
+                    // camera.position.set(0, maxDim * 0.3, cameraZ); 
+                    // camera.lookAt(center);
+                    console.log('Posición de la cámara dinámica (calculada pero no aplicada):', 0, maxDim * 0.3, cameraZ);
+                    
+                    if (controls) {
+                        // controls.target.copy(center);
+                        // controls.minDistance = maxDim * 0.5;
+                        // controls.maxDistance = maxDim * 15;
+                        // controls.update();
+                    }
+                    */
+                    // --- FIN BLOQUE DE CÁMARA DINÁMICA ---
+                },
+                function (xhr) {
+                    console.log((xhr.loaded / xhr.total * 100) + '% cargado del modelo');
+                },
+                function (error) {
+                    console.error('Error detallado al cargar el modelo:', error.message, error.stack);
+                }
+            );
+        }
+
+        // Función de animación para la mano
+        function animateHand(animationName = 'hola') { 
+            if (!mixer || !gltfAnimations || gltfAnimations.length === 0) {
+                console.warn('Mixer o animaciones no disponibles para animateHand.');
+                isAnimating = false;
+                return;
+            }
+
+            if (isAnimating && currentAnimation) {
+                console.log('Ya hay una animación en curso.');
+                 return;
+            }
+            
+            const targetClip = gltfAnimations.find(clip => 
+                clip.name.toLowerCase().includes(animationName.toLowerCase())
+            );
+            
+            if (targetClip) {
+                console.log(`Reproduciendo animación: ${targetClip.name}`);
+                isAnimating = true;
+
+                if (currentAnimation) {
+                    currentAnimation.stop();
+                }
+                
+                currentAnimation = mixer.clipAction(targetClip);
+                currentAnimation.setLoop(THREE.LoopRepeat, 4); 
+                currentAnimation.clampWhenFinished = true; 
+                currentAnimation.reset(); 
+                console.log('Intentando reproducir la animación ahora (repetida 4 veces)...'); 
+                currentAnimation.play();
+                
+                mixer.addEventListener('finished', function onAnimationFinished(e) {
+                    if (e.action === currentAnimation) {
+                        console.log(`Animación '${targetClip.name}' finalizada.`);
+                        isAnimating = false;
+                        currentAnimation = null; 
+                        mixer.removeEventListener('finished', onAnimationFinished); 
+                    }
+                });
+            } else {
+                if (gltfAnimations && gltfAnimations.length > 0) {
+                    console.warn(`No se encontró la animación con nombre similar a '${animationName}'. Nombre de la ÚNICA animación disponible en el modelo: '${gltfAnimations[0].name}'`);
+                } else {
+                    console.warn(`No se encontró la animación con nombre similar a '${animationName}' Y NO HAY animaciones en gltfAnimations.`);
+                }
+                isAnimating = false;
+            }
+        }
+
+        // Función de animación
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            const delta = clock.getDelta();
+            if (mixer && isAnimating) { 
+                mixer.update(delta); 
+            } else if (mixer && !isAnimating && currentAnimation === null) {
+                // Lógica opcional de reseteo también eliminada para simplificar
+            }
+            
+            if (controls) {
+                controls.update(); 
+            }
+            
+            renderer.render(scene, camera);
+        }
+
+        // Manejar redimensionamiento
+        function onWindowResize() {
+            const container = document.getElementById('demoAnimation');
+            const size = 300; // Tamaño fijo para mantener el cuadrado
+            
+            // Asegurarse de que el contenedor mantenga un aspecto cuadrado
+            container.style.width = size + 'px';
+            container.style.height = size + 'px';
+            
+            // Actualizar la cámara y el renderer
+            camera.aspect = 1; // Mantener relación de aspecto 1:1
+            camera.updateProjectionMatrix();
+            renderer.setSize(size, size);
+        }
+
+        init3D();
+
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        const scrollBtn = document.querySelector('.scroll-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        let isListening = false;
+        const recognition = new webkitSpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        
+        function processInput(text) {
+            console.log("[processInput] Texto recibido:", text); // Log al inicio de processInput
+            const inputText = text.toLowerCase().trim();
+            if (inputText === 'hola' && !isAnimating) {
+                console.log("[processInput] 'hola' detectado, llamando a animateHand con el nombre correcto..."); 
+                animateHand('Armature|mixamo.com|Layer0'); 
+                return true;
+            }
+            return false;
+        }
+
+        recognition.onresult = function(event) {
+            const speechResult = event.results[0][0].transcript;
+            const input = document.getElementById('demoInput');
+            input.value = speechResult;
+            processInput(speechResult);
+        };
+
+        recognition.onerror = function(event) {
+            console.error('Error en el reconocimiento de voz:', event.error);
+        };
+
+        function startListening() {
+            if (!isListening) {
+                recognition.start();
+                isListening = true;
+                document.querySelector('.btn-primary').innerHTML = '<i class="fas fa-microphone-slash"></i>';
+                
+                setTimeout(() => {
+                    recognition.stop();
+                    isListening = false;
+                    document.querySelector('.btn-primary').innerHTML = '<i class="fas fa-microphone"></i>';
+                }, 5000);
+            }
+        }
+
+        // Añadir event listener para el input de texto (al presionar Enter)
+        const textInputField = document.getElementById('demoInput');
+        if (textInputField) {
+            textInputField.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault(); // Evitar el comportamiento por defecto del Enter (ej: submit de formulario)
+                    console.log('[Enter en demoInput] Texto a procesar:', textInputField.value); // Log de depuración
+                    processInput(textInputField.value);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
