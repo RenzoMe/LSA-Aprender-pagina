@@ -1,491 +1,180 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traductor de Lengua de Señas Argentina (LSA)</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/lgo/logo.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="stilo.css">
+    <title>LSAprender | Inclusión en tus Manos</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
 </head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="assets/lgo/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
-                Traductor LSA
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#features">Características</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#demo">Demo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tech">Tecnología</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Equipo</a>
-                    </li>
-                </ul>
+<body class="bg-rose-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full z-20 top-0">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-gray-800">
+                <a href="#">LSA<span class="text-pink-500">prender</span></a>
             </div>
-        </div>
-    </nav>
-    <!-- Hero Section -->
+            <div>
+                <a href="#download" class="bg-pink-500 text-white font-semibold px-5 py-2 rounded-lg hover:bg-pink-600 transition-colors duration-300">
+                    Descargar
+                </a>
+            </div>
+        </nav>
+    </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h1 data-aos="fade-up">Traductor LSA</h1>
-            <p class="lead" data-aos="fade-up" data-aos-delay="200">
-                Aplicación móvil para traducir texto y voz al Lenguaje de Señas Argentino
-            </p>
-            <p class="text-white-50" data-aos="fade-up" data-aos-delay="300">
-                Nuestro objetivo es acortar la brecha del idioma y la comunicación, facilitar la comunicación con personas sordo-mudas y hipoacúsicas.
-                Lograr llevar esta app a el ambito escolar, laboral y social, para evitar la discriminación y la exclusión.
-            </p>
-        </div>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section class="gradient-bg text-white pt-32 pb-20">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Rompiendo barreras, una seña a la vez.</h1>
+                    <p class="text-lg md:text-xl text-rose-100 mb-8">
+                        LSAprender es tu puente hacia una comunicación más inclusiva. Traduce texto y voz a Lengua de Señas Argentina (LSA) de forma fácil, rápida e intuitiva.
+                    </p>
+                    <a href="#download" class="bg-white text-pink-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition-transform transform hover:scale-105 duration-300 inline-block">
+                        ¡Obtenla ahora!
+                    </a>
+                </div>
+                <!-- App Mockup Image -->
+                <div class="mt-12 flex justify-center">
+                    <img src="https://placehold.co/300x600/FFFFFF/EC4899?text=LSAprender+App" alt="Muestra de la aplicación LSAprender en un teléfono móvil" class="rounded-3xl shadow-2xl" style="max-width: 80%; height: auto;">
+                </div>
+            </div>
+        </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Características Principales</h2>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-card">
-                        <div class="card-body">
-                            <h3><i class="fas fa-microphone"></i> Reconocimiento de Voz</h3>
-                            <p>Utilizamos un modelo de IA de google para transformar la voz a texto en tiempo real.</p>
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Una app llena de posibilidades</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Diseñada para facilitar la comunicación y el aprendizaje de la LSA para todos.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1: Text to LSA -->
+                    <div class="bg-rose-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-rose-100 text-rose-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                            <i data-feather="edit-3" class="w-8 h-8"></i>
                         </div>
+                        <h3 class="text-2xl font-bold mb-3">Texto a Señas</h3>
+                        <p class="text-gray-600">Escribe cualquier palabra u oración y observa la traducción en LSA al instante a través de un avatar animado.</p>
                     </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-card">
-                        <div class="card-body">
-                            <h3><i class="fas fa-sign-language"></i> Animaciones 3D</h3>
-                            <p>Usamos un modelo 3D para mostrar las señas del Lenguaje de Señas Argentino (LSA).</p>
+
+                    <!-- Feature 2: Voice to LSA -->
+                    <div class="bg-rose-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-rose-100 text-rose-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                            <i data-feather="mic" class="w-8 h-8"></i>
                         </div>
+                        <h3 class="text-2xl font-bold mb-3">Voz a Señas</h3>
+                        <p class="text-gray-600">Habla directamente a tu dispositivo y nuestra tecnología convertirá tu voz en Lengua de Señas Argentina en tiempo real.</p>
                     </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-card">
-                        <div class="card-body">
-                            <h3><i class="fas fa-mobile-alt"></i> Entorno de desarrollo</h3>
-                            <p>○ Desarrollamos la app en Flutter.<br>○ Unity para mostrar el modelo 3D. <br>○ blender para crear las animaciones.</p>
+
+                    <!-- Feature 3: LSA Dictionary -->
+                    <div class="bg-rose-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-rose-100 text-rose-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                            <i data-feather="book-open" class="w-8 h-8"></i>
                         </div>
+                        <h3 class="text-2xl font-bold mb-3">Diccionario Interactivo</h3>
+                        <p class="text-gray-600">Explora un amplio diccionario de señas, busca palabras específicas y practica para mejorar tu fluidez en LSA.</p>
+                    </div>
+
+                    <!-- Feature 4: Inclusive Design -->
+                    <div class="bg-rose-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-rose-100 text-rose-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                            <i data-feather="heart" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Diseño Inclusivo</h3>
+                        <p class="text-gray-600">Con una interfaz clara y accesible, LSAprender está pensada para que todos puedan usarla sin dificultades.</p>
+                    </div>
+
+                    <!-- Feature 5: Learning Mode -->
+                    <div class="bg-rose-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-rose-100 text-rose-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                            <i data-feather="award" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Módulo de Aprendizaje</h3>
+                        <p class="text-gray-600">Aprende LSA desde cero con lecciones interactivas, quizzes y seguimiento de tu progreso personal.</p>
+                    </div>
+                    
+                    <!-- Feature 6: Community -->
+                    <div class="bg-rose-50 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="bg-rose-100 text-rose-600 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                            <i data-feather="users" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Comunidad</h3>
+                        <p class="text-gray-600">Conéctate con otros usuarios, comparte tus dudas y practica en un entorno seguro y colaborativo.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="py-20 gradient-bg">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Descarga LSAprender hoy mismo</h2>
+                <p class="text-rose-100 text-lg mb-8 max-w-2xl mx-auto">Únete a nuestra comunidad y empieza a construir un mundo más conectado e inclusivo. Disponible para iOS y Android.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <!-- App Store Button -->
+                    <a href="#" class="bg-gray-800 text-white py-3 px-6 rounded-lg flex items-center justify-center w-60 hover:bg-gray-900 transition-colors duration-300">
+                        <svg class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.3352 6.0371C17.3323 4.93922 15.9351 4.54545 15.0114 4.53389C13.5829 4.4988 12.1648 5.43718 11.3999 5.43718C10.635 5.43718 9.35175 4.4988 7.84313 4.54545C6.12216 4.59211 4.49902 5.68999 3.49615 7.15243C1.40523 10.2155 2.6533 14.6135 4.56952 17.398C5.5539 18.7844 6.78206 20.3745 8.4052 20.4443C9.91382 20.5024 10.4227 19.6659 12.0107 19.6659C13.5987 19.6659 14.0725 20.5024 15.6502 20.4443C17.3063 20.3628 18.421 18.8195 19.387 17.4331C20.5222 15.7533 21.0126 14.1516 21.031 14.0818C20.9742 14.0702 18.421 13.0617 18.3703 10.0102C18.3352 7.73038 19.8542 6.64415 20.0134 6.4789C19.4213 6.09503 18.7753 5.89069 18.3352 6.0371ZM13.9262 3.06176C14.8148 1.96388 15.6332 0.990422 16.2253 0C15.2224 1.01372 14.3442 2.01594 13.6771 3.12157C13.237 3.82915 12.7817 4.74424 12.5181 5.34863C12.9103 5.30198 13.4398 5.04873 13.9262 4.59211C14.3288 4.20824 14.6251 3.59385 13.9262 3.06176Z"/></svg>
+                        <div>
+                            <p class="text-xs">Descargar en la</p>
+                            <p class="text-xl font-semibold">App Store</p>
+                        </div>
+                    </a>
+
+                    <!-- Google Play Button -->
+                    <a href="#" class="bg-gray-800 text-white py-3 px-6 rounded-lg flex items-center justify-center w-60 hover:bg-gray-900 transition-colors duration-300">
+                        <svg class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M3.01119 1.1593C2.71531 1.34148 2.5 1.66014 2.5 2.01328V21.9867C2.5 22.3399 2.71531 22.6585 3.01119 22.8407L13.6826 12L3.01119 1.1593ZM16.3249 14.1132L14.293 12L16.3249 9.88682L19.5393 12L16.3249 14.1132ZM4.44444 23.834C4.94269 24.062 5.51084 23.9877 5.92569 23.6346L13.6826 17.1558L4.44444 23.834ZM4.44444 0.165999L13.6826 6.84419L5.92569 0.36539C5.51084 0.0123181 4.94269 -0.061954 4.44444 0.165999Z"/></svg>
+                        <div>
+                            <p class="text-xs">DISPONIBLE EN</p>
+                            <p class="text-xl font-semibold">Google Play</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="mb-4 md:mb-0">
+                    <h4 class="text-lg font-bold">LSA<span class="text-rose-300">prender</span></h4>
+                    <p class="text-gray-400 text-sm">Conectando mundos, creando comunidad.</p>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-feather="facebook" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-feather="instagram" class="w-6 h-6"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-feather="twitter" class="w-6 h-6"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; <span id="year"></span> LSAprender. Todos los derechos reservados.</p>
             </div>
         </div>
-    </section>
+    </footer>
 
-
-
-    <!-- Demo Section -->
-    <section id="demo" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Demo de la Aplicación</h2>
-            <!-- Fila para el modelo 3D centrado -->
-            <div class="row justify-content-center mb-4">
-                <div class="col-12 text-center">
-                    <h4>Visualización del Modelo 3D</h4>
-                    <div id="demoAnimation" style="width: 300px; height: 300px; margin: 0 auto; background-color: #f0f0f0; border: 1px solid #ccc; margin-bottom: 20px; text-align: center;">
-                        <div id="modelContainer" style="width: 100%; height: 100%;"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Fila para el área de entrada de texto -->
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="demo-input text-center">
-                        <h4>Ingresa texto o habla:</h4>
-                        <div class="input-group" style="max-width: 500px; margin: 0 auto;">
-                            <input type="text" id="demoInput" class="form-control" placeholder="Escribe algo...">
-                            <div class="input-group-append">
-                                <button id="startRecognition" class="btn btn-primary">
-                                    <i class="fas fa-microphone"></i> 
-                                </button>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <p class="text-muted">Presiona el botón y habla o escribe y presiona Enter</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tech Stack Section -->
-    <section id="tech" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Tecnologías Utilizadas</h2>
-            <div class="row g-4">
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="tech-item">
-                        <h3>Blender</h3>
-                        <p>Creación del modelo 3D y las animaciones.</p>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="tech-item">
-                        <h3>Unity</h3>
-                        <p>Entorno principal donde creamos la aplicación.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Nuestro Equipo</h2>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="team-member">
-                        <img src="https://via.placeholder.com/200" alt="Renzo Meire" class="rounded-circle">
-                        <h3>Renzo Meire</h3>
-                        <p>Desarrollador</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="team-member">
-                        <img src="https://via.placeholder.com/200" alt="Agustina Gullo" class="rounded-circle">
-                        <h3>Agustina Gullo</h3>
-                        <p>Traductora</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="team-member">
-                        <img src="https://via.placeholder.com/200" alt="Milagros Cabanillas" class="rounded-circle">
-                        <h3>Milagros Cabanillas</h3>
-                        <p>Coordinadora del Proyecto</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Scroll to Top Button -->
-    <div id="scrollBtn" class="scroll-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://kit.fontawesome.com/your-code.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Variables globales para Three.js
-        let scene, camera, renderer, controls, clock;
-        let model, mixer, gltfAnimations = [], currentAnimation, isAnimating = false;
+        // Feather Icons initialization
+        feather.replace();
 
-        // Inicializar Three.js
-        function init3D() {
-            const container = document.getElementById('demoAnimation');
-            if (!container) {
-                console.error("FATAL ERROR: Contenedor 'demoAnimation' no encontrado en el DOM.");
-                return;
-            }
-            container.innerHTML = '';
-
-            scene = new THREE.Scene();
-            scene.background = new THREE.Color(0xf0f0f0);
-            
-            // Se eliminó el AxesHelper para quitar las líneas de los ejes
-            
-            const size = 300; // Tamaño fijo para mantener el cuadrado
-
-            camera = new THREE.PerspectiveCamera(70, 1, 0.1, 5000); // Aspect ratio 1:1
-            camera.position.set(0, 1.5, 12); // Acercar cámara en Z a 12. FOV 70.
-            camera.lookAt(0, 0, 0);    
-
-            renderer = new THREE.WebGLRenderer({ 
-                antialias: true, 
-                alpha: true,
-                preserveDrawingBuffer: true 
-            });
-            
-            container.style.position = 'relative';
-            container.style.width = size + 'px';
-            container.style.height = size + 'px';
-            container.style.overflow = 'hidden';
-            container.style.margin = '10px auto';
-            container.style.backgroundColor = '#f0f0f0';
-            
-            renderer.setSize(size, size);
-            renderer.setPixelRatio(window.devicePixelRatio);
-            renderer.shadowMap.enabled = true; 
-            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-            
-            // >>> CRÍTICO: Añadir el canvas del renderer al contenedor del DOM <<<
-            container.appendChild(renderer.domElement);
-            // >>> FIN CRÍTICO <<<
-
-            console.log('Renderer configurado y canvas añadido. Dimensiones del canvas:', size, 'x', size);
-            
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-            scene.add(ambientLight);
-            
-            const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5); 
-            directionalLight.position.set(5, 5, 5);
-            directionalLight.castShadow = true;
-            scene.add(directionalLight);
-            
-            controls = new THREE.OrbitControls(camera, renderer.domElement); 
-            controls.enableDamping = true;
-            controls.dampingFactor = 0.05;
-
-            clock = new THREE.Clock();
-            
-            load3DModel(); 
-            
-            window.addEventListener('resize', onWindowResize);
-            onWindowResize();
-            
-            animate();
-        }
-
-        // Cargar el modelo GLB con animación
-        function load3DModel() {
-            const loader = new THREE.GLTFLoader();
-            
-            console.log('Cargando modelo GLB...');
-            
-            loader.load(
-                'assets/models/saludo.glb',
-                function (gltf) {
-                    console.log('Modelo GLB cargado:', gltf);
-                    
-                    if (!gltf.scene) {
-                        console.error('Error: El archivo GLB no contiene una escena');
-                        return;
-                    }
-                    model = gltf.scene; 
-                    
-                    const scale = 0.1;
-                    model.scale.set(scale, scale, scale);
-                    model.position.set(0, -1, 0); // Revertir Y a la posición original
-                    
-                    scene.add(model);
-                    
-                    gltfAnimations = gltf.animations; 
-                    if (gltfAnimations && gltfAnimations.length > 0) {
-                        console.log('Animaciones encontradas:', gltfAnimations.length);
-                        mixer = new THREE.AnimationMixer(model);
-                        console.log('Mixer de animación configurado.');
-                    } else {
-                        console.warn('No se encontraron animaciones en el modelo');
-                    }
-                    
-                    // --- INICIO BLOQUE DE CÁMARA DINÁMICA (DEBE ESTAR COMENTADO PARA DEPURAR EJES) ---
-                    /*
-                    const box = new THREE.Box3().setFromObject(model);
-                    const center = box.getCenter(new THREE.Vector3());
-                    const size = box.getSize(new THREE.Vector3());
-                    const maxDim = Math.max(size.x, size.y, size.z);
-                    
-                    console.log('Tamaño del modelo (x,y,z):', size.x, size.y, size.z);
-                    console.log('Centro del modelo (x,y,z):', center.x, center.y, center.z);
-                    
-                    const fov = camera.fov * (Math.PI / 180);
-                    let cameraZ = Math.abs(maxDim / Math.sin(fov / 2)) * 1.2;
-                    cameraZ = Math.max(cameraZ, maxDim * 2);
-                    // Esto estaba SOBREESCRIBIENDO la cámara de init3D:
-                    // camera.position.set(0, maxDim * 0.3, cameraZ); 
-                    // camera.lookAt(center);
-                    console.log('Posición de la cámara dinámica (calculada pero no aplicada):', 0, maxDim * 0.3, cameraZ);
-                    
-                    if (controls) {
-                        // controls.target.copy(center);
-                        // controls.minDistance = maxDim * 0.5;
-                        // controls.maxDistance = maxDim * 15;
-                        // controls.update();
-                    }
-                    */
-                    // --- FIN BLOQUE DE CÁMARA DINÁMICA ---
-                },
-                function (xhr) {
-                    console.log((xhr.loaded / xhr.total * 100) + '% cargado del modelo');
-                },
-                function (error) {
-                    console.error('Error detallado al cargar el modelo:', error.message, error.stack);
-                }
-            );
-        }
-
-        // Función de animación para la mano
-        function animateHand(animationName = 'hola') { 
-            if (!mixer || !gltfAnimations || gltfAnimations.length === 0) {
-                console.warn('Mixer o animaciones no disponibles para animateHand.');
-                isAnimating = false;
-                return;
-            }
-
-            if (isAnimating && currentAnimation) {
-                console.log('Ya hay una animación en curso.');
-                 return;
-            }
-            
-            const targetClip = gltfAnimations.find(clip => 
-                clip.name.toLowerCase().includes(animationName.toLowerCase())
-            );
-            
-            if (targetClip) {
-                console.log(`Reproduciendo animación: ${targetClip.name}`);
-                isAnimating = true;
-
-                if (currentAnimation) {
-                    currentAnimation.stop();
-                }
-                
-                currentAnimation = mixer.clipAction(targetClip);
-                currentAnimation.setLoop(THREE.LoopRepeat, 4); 
-                currentAnimation.clampWhenFinished = true; 
-                currentAnimation.reset(); 
-                console.log('Intentando reproducir la animación ahora (repetida 4 veces)...'); 
-                currentAnimation.play();
-                
-                mixer.addEventListener('finished', function onAnimationFinished(e) {
-                    if (e.action === currentAnimation) {
-                        console.log(`Animación '${targetClip.name}' finalizada.`);
-                        isAnimating = false;
-                        currentAnimation = null; 
-                        mixer.removeEventListener('finished', onAnimationFinished); 
-                    }
-                });
-            } else {
-                if (gltfAnimations && gltfAnimations.length > 0) {
-                    console.warn(`No se encontró la animación con nombre similar a '${animationName}'. Nombre de la ÚNICA animación disponible en el modelo: '${gltfAnimations[0].name}'`);
-                } else {
-                    console.warn(`No se encontró la animación con nombre similar a '${animationName}' Y NO HAY animaciones en gltfAnimations.`);
-                }
-                isAnimating = false;
-            }
-        }
-
-        // Función de animación
-        function animate() {
-            requestAnimationFrame(animate);
-            
-            const delta = clock.getDelta();
-            if (mixer && isAnimating) { 
-                mixer.update(delta); 
-            } else if (mixer && !isAnimating && currentAnimation === null) {
-                // Lógica opcional de reseteo también eliminada para simplificar
-            }
-            
-            if (controls) {
-                controls.update(); 
-            }
-            
-            renderer.render(scene, camera);
-        }
-
-        // Manejar redimensionamiento
-        function onWindowResize() {
-            const container = document.getElementById('demoAnimation');
-            const size = 300; // Tamaño fijo para mantener el cuadrado
-            
-            // Asegurarse de que el contenedor mantenga un aspecto cuadrado
-            container.style.width = size + 'px';
-            container.style.height = size + 'px';
-            
-            // Actualizar la cámara y el renderer
-            camera.aspect = 1; // Mantener relación de aspecto 1:1
-            camera.updateProjectionMatrix();
-            renderer.setSize(size, size);
-        }
-
-        init3D();
-
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-
-        const scrollBtn = document.querySelector('.scroll-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        let isListening = false;
-        const recognition = new webkitSpeechRecognition();
-        recognition.continuous = false;
-        recognition.interimResults = false;
-        
-        function processInput(text) {
-            console.log("[processInput] Texto recibido:", text); // Log al inicio de processInput
-            const inputText = text.toLowerCase().trim();
-            if (inputText === 'hola' && !isAnimating) {
-                console.log("[processInput] 'hola' detectado, llamando a animateHand con el nombre correcto..."); 
-                animateHand('Armature|mixamo.com|Layer0'); 
-                return true;
-            }
-            return false;
-        }
-
-        recognition.onresult = function(event) {
-            const speechResult = event.results[0][0].transcript;
-            const input = document.getElementById('demoInput');
-            input.value = speechResult;
-            processInput(speechResult);
-        };
-
-        recognition.onerror = function(event) {
-            console.error('Error en el reconocimiento de voz:', event.error);
-        };
-
-        function startListening() {
-            if (!isListening) {
-                recognition.start();
-                isListening = true;
-                document.querySelector('.btn-primary').innerHTML = '<i class="fas fa-microphone-slash"></i>';
-                
-                setTimeout(() => {
-                    recognition.stop();
-                    isListening = false;
-                    document.querySelector('.btn-primary').innerHTML = '<i class="fas fa-microphone"></i>';
-                }, 5000);
-            }
-        }
-
-        // Añadir event listener para el input de texto (al presionar Enter)
-        const textInputField = document.getElementById('demoInput');
-        if (textInputField) {
-            textInputField.addEventListener('keypress', function(event) {
-                if (event.key === 'Enter') {
-                    event.preventDefault(); // Evitar el comportamiento por defecto del Enter (ej: submit de formulario)
-                    console.log('[Enter en demoInput] Texto a procesar:', textInputField.value); // Log de depuración
-                    processInput(textInputField.value);
-                }
-            });
-        }
+        // Set current year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+
 </body>
 </html>
+
